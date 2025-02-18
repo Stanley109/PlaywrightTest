@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/Stanley109/PlaywrightTest#readme",
   "devDependencies": {
-    "@playwright/test": "^1.37.1"
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4"
   }
 }

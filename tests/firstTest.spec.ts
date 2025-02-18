@@ -4,7 +4,7 @@ import { test, expect, chromium, webkit } from '@playwright/test'; //add modules
 const browserTypes = [chromium, webkit];
 
 for (const browserType of browserTypes) {
-  test(`wiki (${browserType.name()})`, async ({ page }) => {
+  test(`wiki (${browserType.name()})`, async () => {
     // Launch the browser in non-headless mode based on the provided browserType
     const browser = await browserType.launch({ headless: false });
 
@@ -14,7 +14,7 @@ for (const browserType of browserTypes) {
     // Navigate to the Wikipedia website
     await pageInstance.goto('https://wikipedia.org/');
 
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    await pageInstance.waitForTimeout(5000);
 
     // Close the browser when you're done
     await browser.close();
